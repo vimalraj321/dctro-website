@@ -101,7 +101,7 @@ export function LandingPageComponent() {
                   Ready to Transform Your Business?
                 </h2>
                 <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Let's discuss how our IT services can drive your success.
+                  Let&apos;s discuss how our IT services can drive your success.
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
