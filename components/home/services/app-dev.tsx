@@ -1,6 +1,4 @@
 import React from "react";
-import { ServiceMarquee } from "./service-marquee";
-import { ShowcaseLayout } from "./layouts/showcase-layout";
 import { ServiceCardList } from "./service-card-list";
 
 const appDevProjects = [

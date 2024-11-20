@@ -7,17 +7,17 @@ import {
   TabletSmartphone,
 } from "lucide-react";
 
-import { BentoGrid } from "../ui/bento-grid";
-import { BentoCard } from "../ui/bento-grid";
+import { BentoGrid } from "@/components/ui/bento-grid";
+import { BentoCard } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
 
 // Import all service components
-import { WebDevServices } from "../services/web-dev";
-import { AppDevServices } from "../services/app-dev";
-import { IoTSolutions } from "../services/iot-solutions";
-import { RoboticsSolutions } from "../services/robotics-solutions";
-import { UiUxDesign } from "../services/ui-ux-design";
-import { ITTraining } from "../services/it-training";
+import { WebDevServices } from "./web-dev";
+import { AppDevServices } from "./app-dev";
+import { IoTSolutions } from "./iot-solutions";
+import { RoboticsSolutions } from "./robotics-solutions";
+import { UiUxDesign } from "./ui-ux-design";
+import { ITTraining } from "./it-training";
 
 type Service = {
   Icon: React.ElementType;
@@ -58,7 +58,7 @@ const features: Service[] = [
       "User-centric mobile apps for native and cross-platform solutions.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     background: <AppDevServices />,
   },
   {
@@ -68,7 +68,7 @@ const features: Service[] = [
       "Automating processes with innovative robotics for efficiency and precision.",
     href: "#",
     cta: "Learn more",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     background: <RoboticsSolutions />,
   },
   {
@@ -96,7 +96,7 @@ const features: Service[] = [
     name: "Hands-On Training",
     description:
       "Equipping learners with practical skills in Robotics, IoT, Programming, AI, and ML.",
-    className: "col-span-3 lg:col-span-2",
+    className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",
     background: <ITTraining />,
@@ -106,11 +106,24 @@ const features: Service[] = [
 export const Services = () => {
   return (
     <div className="relative max-w-6xl mx-auto px-5">
-      <BentoGrid>
-        {features.map((feature, idx) => (
-          <BentoCard key={idx} {...feature} className={cn(feature.className)} />
-        ))}
-      </BentoGrid>
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">
+        Our Services
+      </h2>
+      <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 text-center">
+        We offer a wide range of services to meet your needs, from web
+        development to robotics solutions and more.
+      </p>
+      <div className="mt-5">
+        <BentoGrid>
+          {features.map((feature, idx) => (
+            <BentoCard
+              key={idx}
+              {...feature}
+              className={cn(feature.className)}
+            />
+          ))}
+        </BentoGrid>
+      </div>
     </div>
   );
 };

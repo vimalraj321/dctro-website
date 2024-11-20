@@ -1,36 +1,29 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { SiteHeader } from "@/components/home/site-header";
-import { SiteFooter } from "@/components/home/site-footer";
+import { Navbar } from "@/components/ui/navbar";
+import { Footer } from "@/components/ui/footer";
 import { Hero } from "./hero";
-import { Services } from "./service";
+import { Services } from "./services/service";
 import { Contact } from "./contact";
+import { ReviewMarquee } from "./reviews/review";
 
 export function LandingPageComponent() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", darkMode.toString());
-  }, [darkMode]);
-
-  const toggleDarkMode = () => setDarkMode(!darkMode);
-
   return (
-    <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
-      <SiteHeader darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
       <main className="flex-1">
         <Hero />
-        <Services />
+
+        {/* <About /> */}
+        <div className="mt-2">
+          <Services />
+        </div>
+
+        {/* <About /> */}
+        <div className="mt-32">
+          <ReviewMarquee />
+        </div>
         <Contact />
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }

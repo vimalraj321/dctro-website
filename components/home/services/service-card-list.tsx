@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "../ui/marquee";
+import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
 
 export interface ServiceProject {

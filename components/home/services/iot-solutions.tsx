@@ -1,7 +1,4 @@
 import React from "react";
-import { TimelineLayout } from "./layouts/timeline-layout";
-import { ShowcaseLayout } from "./layouts/showcase-layout";
-import { ServiceMarquee } from "./service-marquee";
 import { ServiceCardList } from "./service-card-list";
 
 const iotProjects = [
