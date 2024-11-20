@@ -1,5 +1,7 @@
 import React from "react";
-import { FeatureLayout } from "./layouts/feature-layout";
+import { ServiceMarquee } from "./service-marquee";
+import { ShowcaseLayout } from "./layouts/showcase-layout";
+import { ServiceCardList } from "./service-card-list";
 
 const appDevProjects = [
   {
@@ -8,20 +10,6 @@ const appDevProjects = [
     tech: ["React Native", "Firebase", "Redux", "Maps API"],
     preview: "/projects/food-delivery-preview.jpg",
     link: "https://food-delivery.app",
-  },
-  {
-    name: "Fitness Tracker",
-    description: "Health monitoring app with workout planning and analytics",
-    tech: ["Flutter", "Firebase", "HealthKit", "Google Fit"],
-    preview: "/projects/fitness-preview.jpg",
-    link: "https://fitness-tracker.app",
-  },
-  {
-    name: "Dating App",
-    description: "Location-based dating app with AI matchmaking",
-    tech: ["Swift", "Node.js", "MongoDB", "Socket.io"],
-    preview: "/projects/dating-preview.jpg",
-    link: "https://dating-app.dev",
   },
   {
     name: "Learning Platform",
@@ -33,5 +21,5 @@ const appDevProjects = [
 ];
 
 export const AppDevServices = () => {
-  return <FeatureLayout projects={appDevProjects} />;
+  return <ServiceCardList projects={appDevProjects} variant="modern" />;
 };

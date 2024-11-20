@@ -26,5 +26,5 @@ const uiUxProjects = [
 ];
 
 export const UiUxDesign = () => {
-  return <ServiceCardList projects={uiUxProjects} variant="compact" />;
+  return <ServiceCardList projects={uiUxProjects} variant="modern" />;
 };

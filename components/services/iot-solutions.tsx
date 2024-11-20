@@ -1,5 +1,8 @@
 import React from "react";
 import { TimelineLayout } from "./layouts/timeline-layout";
+import { ShowcaseLayout } from "./layouts/showcase-layout";
+import { ServiceMarquee } from "./service-marquee";
+import { ServiceCardList } from "./service-card-list";
 
 const iotProjects = [
   {
@@ -26,5 +29,5 @@ const iotProjects = [
 ];
 
 export const IoTSolutions = () => {
-  return <TimelineLayout projects={iotProjects} />;
+  return <ServiceCardList projects={iotProjects} variant="modern" />;
 };

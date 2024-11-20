@@ -33,5 +33,5 @@ const trainingPrograms = [
 ];
 
 export const ITTraining = () => {
-  return <ServiceCardList projects={trainingPrograms} variant="default" />;
+  return <ServiceCardList projects={trainingPrograms} variant="modern" />;
 };

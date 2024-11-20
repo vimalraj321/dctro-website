@@ -1,10 +1,23 @@
 import React from "react";
-import { ShowcaseLayout } from "./layouts/showcase-layout";
-import Marquee from "../ui/marquee";
 import { ServiceCardList } from "./service-card-list";
-import { ServiceMarquee } from "./service-marquee";
 
 const webDevProjects = [
+  {
+    name: "Caliber Fitness",
+    description:
+      "Unisex fitness center focusing on holistic approach to mind and body. Our inclusive",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    preview: "/projects/caliber-fitness-preview.jpg",
+    link: "https://caliber-fitness.com",
+  },
+  {
+    name: "Rehabilitation Center",
+    description:
+      "Comprehensive rehabilitation services for physical and mental well-being",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    preview: "/projects/rehabilitation-center-preview.jpg",
+    link: "https://rehabilitation-center.com",
+  },
   {
     name: "E-Commerce Platform",
     description:
@@ -20,40 +33,8 @@ const webDevProjects = [
     preview: "/projects/portfolio-preview.jpg",
     link: "https://portfolio-cms.dev",
   },
-  {
-    name: "Task Management App",
-    description: "Real-time collaborative task management platform",
-    tech: ["Vue.js", "Firebase", "Vuex"],
-    preview: "/projects/task-app-preview.jpg",
-    link: "https://task-management.app",
-  },
-  {
-    name: "Social Media Dashboard",
-    description: "Analytics dashboard for social media management",
-    tech: ["React", "D3.js", "Material UI"],
-    preview: "/projects/dashboard-preview.jpg",
-    link: "https://social-dashboard.app",
-  },
-  {
-    name: "Booking System",
-    description: "Appointment scheduling system for service providers",
-    tech: ["Next.js", "MongoDB", "Redux"],
-    preview: "/projects/booking-preview.jpg",
-    link: "https://booking-system.app",
-  },
-  {
-    name: "AI Content Generator",
-    description: "Content generation platform powered by AI",
-    tech: ["React", "OpenAI API", "Node.js"],
-    preview: "/projects/ai-content-preview.jpg",
-    link: "https://ai-content-gen.app",
-  },
 ];
 
 export const WebDevServices = () => {
-  return (
-    <ServiceMarquee vertical variant="grid">
-      <ShowcaseLayout projects={webDevProjects} />
-    </ServiceMarquee>
-  );
+  return <ServiceCardList projects={webDevProjects} variant="modern" />;
 };
