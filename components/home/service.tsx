@@ -9,13 +9,38 @@ import {
 
 import { BentoGrid } from "../ui/bento-grid";
 import { BentoCard } from "../ui/bento-grid";
-// import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-// const TeacherIcon = ({ className }: { className: string }) => (
-//   <Image src="/images/teacher.svg" alt="logo" width={25} height={25} />
-// );
+// Import all service components
+import { WebDevServices } from "../services/web-dev";
+import { AppDevServices } from "../services/app-dev";
+import { IoTSolutions } from "../services/iot-solutions";
+import { RoboticsSolutions } from "../services/robotics-solutions";
+import { UiUxDesign } from "../services/ui-ux-design";
+import { ITTraining } from "../services/it-training";
 
-const features = [
+type Service = {
+  Icon: React.ElementType;
+  name: string;
+  description: string;
+  href: string;
+  cta: string;
+  className: string;
+  background: React.ReactNode;
+};
+
+type BentoCardProps = {
+  name: string;
+  className: string;
+  background: React.ReactNode;
+  Icon: React.ElementType;
+  description: string;
+  href: string;
+  cta: string;
+  children?: React.ReactNode;
+};
+
+const features: Service[] = [
   {
     Icon: ChevronsLeftRightEllipsis,
     name: "Web Development",
@@ -24,9 +49,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
-    background: (
-      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <WebDevServices />,
   },
   {
     Icon: CodeIcon,
@@ -36,9 +59,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
-    background: (
-      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <AppDevServices />,
   },
   {
     Icon: Bot,
@@ -48,9 +69,7 @@ const features = [
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
-    background: (
-      <div className="absolute right-2 top-4 h-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <RoboticsSolutions />,
   },
   {
     Icon: Cpu,
@@ -60,9 +79,7 @@ const features = [
     className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",
-    background: (
-      <div className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <IoTSolutions />,
   },
   {
     Icon: TabletSmartphone,
@@ -72,9 +89,7 @@ const features = [
     className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",
-    background: (
-      <div className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <UiUxDesign />,
   },
   {
     Icon: Presentation,
@@ -84,18 +99,16 @@ const features = [
     className: "col-span-3 lg:col-span-2",
     href: "#",
     cta: "Learn more",
-    background: (
-      <div className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
-    ),
+    background: <ITTraining />,
   },
 ];
 
 export const Services = () => {
   return (
-    <div className="max-w-6xl mx-auto px-5">
+    <div className="relative max-w-6xl mx-auto px-5">
       <BentoGrid>
         {features.map((feature, idx) => (
-          <BentoCard key={idx} {...feature} />
+          <BentoCard key={idx} {...feature} className={cn(feature.className)} />
         ))}
       </BentoGrid>
     </div>

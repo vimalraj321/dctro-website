@@ -36,5 +36,3 @@ export const Hero = () => {
     </section>
   );
 };
-
-// TODO: Add a hero image
